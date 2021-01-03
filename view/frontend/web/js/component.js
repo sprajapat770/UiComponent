@@ -1,4 +1,8 @@
-define(['uiElement'],function(Component){
+define(['uiElement','underscore'],function(Component,_){
 	'use strict';
-	return Component.extend();
+	return Component.extend({
+		getItems: function(){
+			return _.toArray(this.items);
+		}
+	});
 });

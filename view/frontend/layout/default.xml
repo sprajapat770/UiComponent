@@ -1,7 +1,12 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
-			<block class="Magento\Framework\View\Element\Template" name="suraj.uicomponent" template="Suraj_UiComponent::script.phtml"/>
+			<block class="Magento\Framework\View\Element\Template" name="suraj.uicomponent" template="Suraj_UiComponent::script.phtml">
+				<arguments>
+					<argument name="viewModel" xsi:type="object">Suraj\UiComponent\ViewModel\CmsPageList
+					</argument>
+				</arguments>
+			</block>
         </referenceContainer>
     </body>
 </page>

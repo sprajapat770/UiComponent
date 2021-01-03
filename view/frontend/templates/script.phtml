@@ -1,5 +1,22 @@
+<?php
+
+/**
+*@var \Magento\Framework\View\Element\Template $block; 
+**/
+
+/**
+*@var \Suraj\UiComponent\ViewModel\CmsPageList $viewModel; 
+**/
+$viewModel = $block->getData('viewModel');
+?>
+
 <div data-bind="scope:'suraj-component'">
 	<h2 data-bind="text:title"></h2>
+	<ul>
+		<!--ko foreach: {data:getItems(), as: 'page' } --> 
+		<li><a data-bind="attr:{href:page.url}, text: page.title"></a></li>
+		<!--/ko-->
+	</ul>
 </div>
 
 <script type="text/x-magento-init">
@@ -9,7 +26,8 @@
 				"components":{
 					"suraj-component":{
 						"component":"Suraj_UiComponent/js/component",
-						"title":"Hello World!"
+						"title":"Hello World!",
+						"items":<?= $viewModel->getItemsJson();?>
 					}
 				}
 			}
